@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1" >
+        <link rel="icon" type="image/png" href="styles/bwsun32.png" />
+        <link rel="apple-touch-icon" href="styles/apple-touch-icon.png" />
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' 
+            type='text/css' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel='stylesheet' href='styles/style.css' type='text/css' />
+        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" />
+        <title>Double TaskList</title>
+    </head>   
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "<'your-apiKey'>",
+        authDomain: "double-tasklist.firebaseapp.com",
+        databaseURL: "https://double-tasklist.firebaseio.com",
+        projectId: "double-tasklist",
+        storageBucket: "double-tasklist.appspot.com",
+        messagingSenderId: "<'your-messagingSenderId'>"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <body>
+        <!--<div id="loading-div" style="background-color:white; width:100vw; height:100vh; position:fixed; 
+            font-size:10vw; z-index:100; margin:auto; text-align: center; padding: 3em 0;">LOADING...</div>-->
+
+     
+        <div class="container-fluid">
+            <div class="navbar navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-8 col-md-10">
+                            <span id = "userinfo"></span>
+                        </div>
+                        <div class="col-xs-4 col-md-2 logout-icon">
+                            <a href="javascript:firebase.auth().signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+                <div class="row">
+                    <!-- White taskList code -->  
+                    <div class="tasklist col-xs-12 col-md-6" id="white">
+                            <header>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h1><i class="fa fa-calendar"></i></h1><!--FontAwesome-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <form class="form tasklist-form">
+                                        <div class="col-xs-12 col-md-8">
+                                            <input type="text" placeholder="Write description">
+                                        </div>
+                                        <div class="col-xs-12 col-md-2">
+                                            <button type="button" class="button btn"><i class= "fa fa-plus"></i>&nbsp;Add task</button>
+                                        </div>
+                                    </form>
+                                </div>  
+                                <!-- Здесь должен быть ul TaskList-->
+                            </div>
+                    </div>
+                    <!-- black tasklist code -->
+                    <div class="tasklist col-xs-12 col-md-6" id="black">
+                            <header>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h1><i class="fa fa-calendar"></i></h1><!--FontAwesome-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <form class="form tasklist-form">
+                                        <div class="col-xs-12 col-md-8">
+                                            <input type="text" placeholder="Write description">
+                                        </div>
+                                        <div class="col-xs-12 col-md-2">
+                                            <button type="button" class="button btn"><i class= "fa fa-plus"></i>&nbsp;Add task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Здесь должен быть ul TaskList-->                            
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+        <script  src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="scripts/tasklist.js"></script>
+    </body>
+</html>

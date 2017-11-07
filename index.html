@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1" >
+        <link rel="icon" type="image/png" href="styles/bwsun32.png" />
+        <link rel="apple-touch-icon" href="styles/apple-touch-icon.png" />
+        <link href="styles/style.css" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" />
+
+        <style>
+            body {
+                background-color:white;
+                text-align: center;
+            }
+
+            li {
+                border-left: none;
+            }
+            #sun {
+                margin:auto;
+                background-image: url(styles/bwsun.png);
+                width:338px;
+                height:338px;
+            }
+
+        </style>
+
+        <title>Double TaskList - User Login</title>
+    </head>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "<'your-apiKey'>",
+        authDomain: "double-tasklist.firebaseapp.com",
+        databaseURL: "https://double-tasklist.firebaseio.com",
+        projectId: "double-tasklist",
+        storageBucket: "double-tasklist.appspot.com",
+        messagingSenderId: "<'your-messagingSenderId'>"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+  <!-- FirebaseUI Login Widget -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>  
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />  
+    <script type="text/javascript">  
+        var uiConfig = {  
+        signInSuccessUrl: 'tasklist.html',  
+        signInOptions: [  
+        // Firebase Authentication Providers
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+        ],  
+        tosUrl: '<your-tos-url>'  
+        };  
+        // FirebaseUI widget initialization   
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+
+        ui.start('#firebaseui-auth-container', uiConfig);  
+    </script>  
+ 
+  <body> 
+       <h1>Double TaskList</h1>  
+         <div id="sun"></div>
+         <div id="firebaseui-auth-container"></div>
+          
+  </body>  
+ </html> 
+
+<body></body>
+</html>
